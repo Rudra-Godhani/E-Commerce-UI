@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="utilities.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="desktop.css">
+    <link rel="stylesheet" href="tablet.css">
+    <link rel="stylesheet" href="mobile.css">
 </head>
 
 <body>
@@ -51,7 +55,9 @@
                     <a href="#">Home</a>
                     <div>
                         <a href="#">Shop</a>
-                        <i class="fa-solid fa-angle-down"></i>
+                        <span>
+                            <i class="fa-solid fa-angle-down"></i>
+                        </span>
                     </div>
                     <a href="#">About</a>
                     <a href="#">Blog</a>
@@ -67,12 +73,31 @@
                 </div>
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart">1</span>
                 <i class="fa-regular fa-heart"></i>
+                <i class="hamburger-open fa-solid fa-bars" onclick="openMenu()"></i>
+                <i class="hamburger-close fa-solid fa-xmark" onclick="closeMenu()"></i>
+                <span class="like">1</span>
             </div>
+
         </div>
     </section>
 
-    <section id="hero">
+    <div class="mobile-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+        <a href="   #">Pages</a>
+        <div>
+            <a href="#">Shop</a>
+            <span>
+                <i class="fa-solid fa-angle-down"></i>
+            </span>
+        </div>
+    </div>
+
+    <!-- <section id="hero">
         <div class="hero-outer">
             <div class="hero-content">
                 <h5>SUMMER 2020</h5>
@@ -81,6 +106,47 @@
                     but things on a small scale.</h4>
                 <a href="#">SHOP NOW</a>
             </div>
+        </div>
+    </section> -->
+
+    <section id="hero">
+        <div class="prev" onclick="goPrev()"><i class="fa-solid fa-angle-left fa-3x"></i></div>
+        <div class="next" onclick="goNext()"><i class="fa-solid fa-angle-right fa-3x"></i></div>
+        <div class="slide">
+            <img src="images/hero-1.jpg" alt="">
+            <div class="hero-content">
+                <h5>SUMMER 2020</h5>
+                <h1>NEW COLLECTION</h1>
+                <h4>We know how large objects will act,
+                    but things on a small scale.</h4>
+                <a href="#">SHOP NOW</a>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="images/carousal-.jpg" alt="">
+            <div class="hero-content">
+                <h5>SUMMER 2020</h5>
+                <h1>NEW COLLECTION</h1>
+                <h4>We know how large objects will act,
+                    but things on a small scale.</h4>
+                <a href="#">SHOP NOW</a>
+            </div>
+        </div>
+
+        <!-- <div class="slide">
+            <img src="images/carousal-1.avif" alt="">
+            <div class="hero-content">
+                <h5>SUMMER 2020</h5>
+                <h1>NEW COLLECTION</h1>
+                <h4>We know how large objects will act,
+                    but things on a small scale.</h4>
+                <a href="#">SHOP NOW</a>
+            </div>
+        </div> -->
+        <div class="page">
+            <div class="first"></div>
+            <div class="second"></div>
         </div>
     </section>
 
@@ -268,7 +334,7 @@
             </div>
         </div>
     </section>
-
+    <!-- hero-b -->
     <section id="hero-b">
         <div class="hero-b-container">
             <div class="hero-b-left">
@@ -285,6 +351,213 @@
             </div>
         </div>
     </section>
+    <!-- hero-c -->
+    <section id="hero-c">
+        <div class="hero-c-container">
+            <div class="hero-c-left">
+                <img src="images/hero-c.png" alt="person">
+            </div>
+            <div class="hero-c-right">
+                <h4>SUMMER 2020</h4>
+                <h1>Part of the Neural
+                    Universe</h1>
+                <p>We know how large objects will act,
+                    but things on a small scale.</p>
+                <div>
+                    <a href="#" class="btn">BUY NOW</a>
+                    <a href="#" class="btn btn-light">READ MORE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- featured-post -->
+    <section id="featured-post">
+        <div class="featured-post-container">
+            <div class="top-content">
+                <h6>Practice Advice</h6>
+                <h2>Featured Products</h2>
+                <p>Problems trying to resolve the conflict between
+                    the two major realms of Classical physics: Newtonian mechanics </p>
+            </div>
+
+            <div class="featured-post-grid">
+                <div>
+                    <div class="overlay">
+                        <img src="images/featured-post/featured-post-1.svg" alt="">
+                    </div>
+
+                    <div class="post-content">
+                        <div class="row-1">
+                            <small class="blue">Google</small>
+                            <small>Trending</small>
+                            <small>New</small>
+                        </div>
+
+                        <h4 class="row-2">Loudest à la Madison #1
+                            (L'integral)</h4>
+
+                        <p class="row-3">We focus on ergonomics and meeting
+                            you where you work. It's only a
+                            keystroke away.</p>
+
+                        <div class="row-4">
+                            <div>
+                                <i class="fa-regular fa-clock"></i>
+                                <small>22 April 2021</small>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-chart-line"></i>
+                                <small>10 comments</small>
+                            </div>
+                        </div>
+                        <div class="row-5">
+                            <h6>Learn More</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="overlay">
+                        <img src="images/featured-post/featured-post-2.svg" alt="">
+                    </div>
+
+                    <div class="post-content">
+                        <div class="row-1">
+                            <small class="blue">Google</small>
+                            <small>Trending</small>
+                            <small>New</small>
+                        </div>
+
+                        <h4 class="row-2">Loudest à la Madison #1
+                            (L'integral)</h4>
+
+                        <p class="row-3">We focus on ergonomics and meeting
+                            you where you work. It's only a
+                            keystroke away.</p>
+
+                        <div class="row-4">
+                            <div>
+                                <i class="fa-regular fa-clock"></i>
+                                <small>22 April 2021</small>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-chart-line"></i>
+                                <small>10 comments</small>
+                            </div>
+                        </div>
+                        <div class="row-5">
+                            <h6>Learn More</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="overlay">
+                        <img src="images/featured-post/featured-post-3.svg" alt="">
+                    </div>
+
+                    <div class="post-content">
+                        <div class="row-1">
+                            <small class="blue">Google</small>
+                            <small>Trending</small>
+                            <small>New</small>
+                        </div>
+
+                        <h4 class="row-2">Loudest à la Madison #1
+                            (L'integral)</h4>
+
+                        <p class="row-3">We focus on ergonomics and meeting
+                            you where you work. It's only a
+                            keystroke away.</p>
+
+                        <div class="row-4">
+                            <div>
+                                <i class="fa-regular fa-clock"></i>
+                                <small>22 April 2021</small>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-chart-line"></i>
+                                <small>10 comments</small>
+                            </div>
+                        </div>
+                        <div class="row-5">
+                            <h6>Learn More</h6>
+                            <i class="fa-solid fa-angle-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <section id="footer-top">
+        <div class="footer-container">
+            <div class="top-content">
+                <h3 class="logo">
+                    Bandage
+                </h3>
+                <div class="icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer-middle">
+        <div class="footer-container">
+            <div class="middle-content">
+                <div class="col-1">
+                    <h5>Company Info</h5>
+                    <a href="#">About Us</a>
+                    <a href="#">Carrier</a>
+                    <a href="#">We are hiring</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="col-2">
+                    <h5>Legal</h5>
+                    <a href="#">About Us</a>
+                    <a href="#">Carrier</a>
+                    <a href="#">We are hiring</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="col-3">
+                    <h5>Features</h5>
+                    <a href="#">Business Marketing</a>
+                    <a href="#">User Analytic</a>
+                    <a href="#">Live Chat</a>
+                    <a href="#">Unlimited Support</a>
+                </div>
+                <div class="col-4">
+                    <h5>Resources</h5>
+                    <a href="#">IOS & Android</a>
+                    <a href="#">Watch a Demo</a>
+                    <a href="#">Customers</a>
+                    <a href="#">API</a>
+                </div>
+                <div class="col-5">
+                    <h5>Get In Touch</h5>
+                    <div class="email">
+                        <input type="text" placeholder="Your Email">
+                        <a href="#">Subscribe</a>
+                    </div>
+                    <p>Lore imp sum dolor Amit</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer-bottom">
+        <div class="footer-container">
+            <div class="bottom-content">
+                <h6>Made With Love By Finland All Right Reserved </h6>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
