@@ -1,3 +1,5 @@
+// for carousal
+
 const slides = document.querySelectorAll(".slide");
 var counter = 0;
 
@@ -45,12 +47,75 @@ const slideImage = () => {
     })
 }
 
-const openMenu = () => {
-    const menu = document.querySelector(".mobile-links");
-    menu.classList.add("open");
+
+// for togglemenu
+
+function toggleMenu() {
+    const mobileLinks = document.querySelector('.mobile-links');
+    const hamburgerIcon = document.querySelector('.hamburger-icon');
+    
+    mobileLinks.classList.toggle('active');
+    document.body.classList.toggle('menu-open');
+    
+    if (mobileLinks.classList.contains('active')) {
+        hamburgerIcon.classList.remove('fa-bars');
+        hamburgerIcon.classList.add('fa-xmark');
+    } else {
+        hamburgerIcon.classList.remove('fa-xmark');
+        hamburgerIcon.classList.add('fa-bars');
+    }
 }
 
-const closeMenu = () => {
-    const menu = document.querySelector(".mobile-links");
-    menu.classList.remove("open");
+
+// for hero-b sliders
+
+const b_slides = document.querySelectorAll(".hero-b-container");
+var b_counter = 0;
+
+b_slides.forEach((slide, index) => {
+    slide.style.left = `${index * 100}%`;
+})
+
+const b_first = document.querySelector(".b-first");
+const b_second = document.querySelector(".b-second");
+
+console.log(b_slides.length)
+console.log(b_slides)
+const goPrevb = () => {
+    console.log("pres prev")
+    console.log(b_counter)
+    if (b_counter == 0) {
+        return;
+    }
+    b_counter--;
+    b_slideImage();
+    b_updateActiveClass();
+}
+
+const goNextb = () => {
+    console.log(b_counter)
+    console.log("pres next")
+    if (b_counter === b_slides.length - 1) {
+        b_counter = 0;
+    } else {
+        b_counter++;
+    }
+    b_slideImage();
+    b_updateActiveClass();
+}
+
+const b_updateActiveClass= () => {
+    if (b_counter === 0) {
+        b_first.classList.add("active");
+        b_second.classList.remove("active");
+    } else if (b_counter === 1) {
+        b_second.classList.add("active");
+        b_first.classList.remove("active");
+    }
+};
+
+const b_slideImage = () => {
+    b_slides.forEach((slide) => {
+        slide.style.transform = `translateX(-${b_counter * 100}%)`
+    })
 }

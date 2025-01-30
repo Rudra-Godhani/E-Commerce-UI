@@ -1,0 +1,238 @@
+@media (max-width: 480px) {
+    #navbar {
+        margin: 0px 30px;
+    }
+
+    .slide .hero-content {
+        width: 80%;
+    }
+
+    .slide .hero-content h1 {
+        font-size: 35px;
+    }
+
+    #hero .next {
+        right: 30px;
+    }
+
+    #hero .prev {
+        left: 30px;
+    }
+
+    /* editors */
+
+    #editors-pick .top-content {
+        /* padding-bottom: 48px; */
+        padding: 0px 68.5px 48px 68.5px;
+    }
+
+    .editors-grid {
+        height: 100%;
+        grid-template-columns: 1fr;
+        column-gap: 0px;
+        row-gap: 30px;
+        padding: 0px 40.5px;
+    }
+
+    .editors-grid img {
+        height: 500px;
+    }
+
+    /* .editors-grid div:nth-child(1),
+    .editors-grid div:nth-child(2) {
+        grid-row: span 1;
+    }
+
+    .editors-grid div:nth-child(3) {
+        grid-row: 0;
+        display: flex;
+        flex-direction: column;
+    } */
+
+
+    /* featured */
+    #featured .top-content {
+        padding: 80px 76.5px;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-grid {
+        column-gap: 0px;
+        row-gap: 30px;
+    }
+
+    /* hero-c */
+
+    #hero-c {
+        height: 100%;
+    }
+
+    #hero-c .hero-c-container {
+        max-width: 100%;
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: start;
+    }
+
+    .hero-c-right {
+        width: 78%;
+        padding-top: 120px;
+        text-align: center;
+        margin: 0 auto;
+        gap: 32.5px;
+    }
+
+    .hero-c-right p {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-c-right .btns {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .hero-c-left {
+        width: 100%;
+        height: 100%;
+        padding-top: 28px;
+        overflow: hidden;
+    }
+
+    .hero-c-left img {
+        height: 450px;
+        width: 100%;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        position: relative;
+        left: 0;
+        top: 0;
+        object-position: top;
+    }
+
+    .hero-c-right .btn {
+        background-color: #23A6F0;
+    }
+
+    .hero-c-right .btn.btn-light {
+        color: #23A6F0;
+        border: 1px solid #23A6F0;
+    }
+
+    .featured-post-grid {
+        row-gap: 30px;
+    }
+
+    /* footer-top */
+    #footer-top .top-content {
+        display: flex;
+        flex-direction: column;
+        gap: 11.5px;
+        padding-left: 44px;
+    }
+
+    #footer-middle {
+        padding: 70px 0;
+    }
+
+    #footer-middle .middle-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 46px;
+        gap: 30px;
+        justify-content: space-between;
+    }
+
+    #footer-bottom {
+        padding: 25px 0;
+    }
+
+    #footer-bottom .bottom-content h6 {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0px 50px;
+    }
+
+    #footer-middle .middle-content .col-5 .email input {
+        width: 100%;
+        padding: 15px 0 15px 20px;
+    }
+
+    #footer-middle .middle-content .col-5 .email a {
+        padding: 9px 10px;
+    }
+
+    #hero-b .next {
+        right: 30px;
+    }
+
+    #hero-b .prev {
+        left: 30px;
+    }
+
+
+    #hero-b {
+        height: 1230px;
+        width: 100%;
+        position: relative;
+    }
+
+    .hero-b-left h1 {
+        font-size: 40px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .hero-b-left div h3{
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+    }
+
+    .hero-b-left {
+        margin-top: 160px;
+        padding: 0px 60px;
+        padding-top: 50px;
+        background-color: yellow;
+        text-align: center;
+    }
+
+    .hero-b-right {
+        padding-top: 0px;
+        height: 100%;
+        width: 100%;
+        background-color: blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-b-right img {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        background-position: 0% 0%;
+        display: block;
+        margin-top: 0px;
+    }
+
+    .hero-b-left p {
+        width: 60%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-b-left div {
+        display: inline-flex;
+        gap: 34px;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+    }
+}

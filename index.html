@@ -75,11 +75,9 @@
                 <i class="fa-solid fa-cart-shopping"></i>
                 <span class="cart">1</span>
                 <i class="fa-regular fa-heart"></i>
-                <i class="hamburger-open fa-solid fa-bars" onclick="openMenu()"></i>
-                <i class="hamburger-close fa-solid fa-xmark" onclick="closeMenu()"></i>
+                <i class="hamburger-icon fa-solid fa-bars" onclick="toggleMenu()"></i>
                 <span class="like">1</span>
             </div>
-
         </div>
     </section>
 
@@ -95,19 +93,11 @@
                 <i class="fa-solid fa-angle-down"></i>
             </span>
         </div>
-    </div>
-
-    <!-- <section id="hero">
-        <div class="hero-outer">
-            <div class="hero-content">
-                <h5>SUMMER 2020</h5>
-                <h1>NEW COLLECTION</h1>
-                <h4>We know how large objects will act,
-                    but things on a small scale.</h4>
-                <a href="#">SHOP NOW</a>
-            </div>
+        <div>
+            <i class="user-i fa-regular fa-user"></i>
+            <a href="#">Login / Register</a>
         </div>
-    </section> -->
+    </div>
 
     <section id="hero">
         <div class="prev" onclick="goPrev()"><i class="fa-solid fa-angle-left fa-3x"></i></div>
@@ -124,7 +114,7 @@
         </div>
 
         <div class="slide">
-            <img src="images/carousal-.jpg" alt="">
+            <img src="images/carousal-3.jpg" alt="">
             <div class="hero-content">
                 <h5>SUMMER 2020</h5>
                 <h1>NEW COLLECTION</h1>
@@ -133,19 +123,8 @@
                 <a href="#">SHOP NOW</a>
             </div>
         </div>
-
-        <!-- <div class="slide">
-            <img src="images/carousal-1.avif" alt="">
-            <div class="hero-content">
-                <h5>SUMMER 2020</h5>
-                <h1>NEW COLLECTION</h1>
-                <h4>We know how large objects will act,
-                    but things on a small scale.</h4>
-                <a href="#">SHOP NOW</a>
-            </div>
-        </div> -->
         <div class="page">
-            <div class="first"></div>
+            <div class="first active"></div>
             <div class="second"></div>
         </div>
     </section>
@@ -336,6 +315,8 @@
     </section>
     <!-- hero-b -->
     <section id="hero-b">
+        <div class="prev" onclick="goPrevb()"><i class="fa-solid fa-angle-left fa-3x"></i></div>
+        <div class="next" onclick="goNextb()"><i class="fa-solid fa-angle-right fa-3x"></i></div>
         <div class="hero-b-container">
             <div class="hero-b-left">
                 <h4>SUMMER 2020</h4>
@@ -350,6 +331,26 @@
                 <img src="images/hero-b.png" alt="person">
             </div>
         </div>
+
+        <div class="hero-b-container">
+            <div class="hero-b-left">
+                <h4>SUMMER 2020</h4>
+                <h1>Vita Classic Product</h1>
+                <p>We know how large objects will act, We know how are objects will act, We know</p>
+                <div>
+                    <h3>$16.48</h3>
+                    <a href="#">ADD TO CART</a>
+                </div>
+            </div>
+            <div class="hero-b-right">
+                <img src="images/editors/editors-3-Photoroom.png" alt="person">
+            </div>
+        </div>
+
+        <div class="b-page">
+            <div class="b-first active"></div>
+            <div class="b-second"></div>
+        </div>
     </section>
     <!-- hero-c -->
     <section id="hero-c">
@@ -363,7 +364,7 @@
                     Universe</h1>
                 <p>We know how large objects will act,
                     but things on a small scale.</p>
-                <div>
+                <div class="btns">
                     <a href="#" class="btn">BUY NOW</a>
                     <a href="#" class="btn btn-light">READ MORE</a>
                 </div>
