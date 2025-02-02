@@ -1,62 +1,12 @@
-// for carousal
-
-const slides = document.querySelectorAll(".slide");
-var counter = 0;
-
-slides.forEach((slide, index) => {
-    slide.style.left = `${index * 100}%`;
-})
-
-const first = document.querySelector(".first");
-const second = document.querySelector(".second");
-
-console.log(slides.length)
-const goPrev = () => {
-    if (counter == 0) {
-        return;
-    }
-    counter--;
-    slideImage();
-    updateActiveClass();
-}
-
-const goNext = () => {
-    console.log(counter);
-    if (counter === slides.length - 1) {
-        counter = 0;
-    } else {
-        counter++;
-    }
-    slideImage();
-    updateActiveClass();
-}
-
-const updateActiveClass = () => {
-    if (counter === 0) {
-        first.classList.add("active");
-        second.classList.remove("active");
-    } else if (counter === 1) {
-        second.classList.add("active");
-        first.classList.remove("active");
-    }
-};
-
-const slideImage = () => {
-    slides.forEach((slide) => {
-        slide.style.transform = `translateX(-${counter * 100}%)`
-    })
-}
-
-
 // for togglemenu
 
 function toggleMenu() {
     const mobileLinks = document.querySelector('.mobile-links');
     const hamburgerIcon = document.querySelector('.hamburger-icon');
-    
+
     mobileLinks.classList.toggle('active');
     document.body.classList.toggle('menu-open');
-    
+
     if (mobileLinks.classList.contains('active')) {
         hamburgerIcon.classList.remove('fa-bars');
         hamburgerIcon.classList.add('fa-xmark');
@@ -66,56 +16,109 @@ function toggleMenu() {
     }
 }
 
+// for hero
 
-// for hero-b sliders
+let adIndex = 1;
+let firstLoad = true;
+let adInterval = setInterval(() => changeAdSlide(1), 3000);
+function changeAdSlide(n) {
+    showAdSlides(adIndex += n, n);
+    resetAdTimer();
+}
+function goToAdSlide(n) {
+    showAdSlides(adIndex = n, 1);
+    resetAdTimer();
+}
+function resetAdTimer() {
+    clearInterval(adInterval);
+    adInterval = setInterval(() => changeAdSlide(1), 3000);
+}
+document.querySelector("#hero .prev").addEventListener("click", () => changeAdSlide(-1));
+document.querySelector("#hero .next").addEventListener("click", () => changeAdSlide(1));
 
-const b_slides = document.querySelectorAll(".hero-b-container");
-var b_counter = 0;
+document.addEventListener("DOMContentLoaded", () => {
+    showAdSlides(1, 0);
+    firstLoad = false;
+});
 
-b_slides.forEach((slide, index) => {
-    slide.style.left = `${index * 100}%`;
-})
+function showAdSlides(n, indicator = 0) {
+    let ads = document.getElementsByClassName("slide");
+    let pages = document.querySelectorAll("#hero .page div");
 
-const b_first = document.querySelector(".b-first");
-const b_second = document.querySelector(".b-second");
+    if (n > ads.length) adIndex = 1;
+    if (n < 1) adIndex = ads.length;
 
-console.log(b_slides.length)
-console.log(b_slides)
-const goPrevb = () => {
-    console.log("pres prev")
-    console.log(b_counter)
-    if (b_counter == 0) {
-        return;
+    for (let i = 0; i < ads.length; i++) {
+        ads[i].style.display = "none";
+        ads[i].classList.remove("slide-left", "slide-right");
     }
-    b_counter--;
-    b_slideImage();
-    b_updateActiveClass();
+
+    for (let i = 0; i < pages.length; i++) {
+        pages[i].classList.remove("active");
+    }
+
+    if (!firstLoad) {
+        if (indicator === -1) {
+            ads[adIndex - 1].classList.add("slide-left");
+        } else if (indicator === 1) {
+            ads[adIndex - 1].classList.add("slide-right");
+        }
+    }
+
+    ads[adIndex - 1].style.display = "flex";
+    pages[adIndex - 1].classList.add("active");
 }
 
-const goNextb = () => {
-    console.log(b_counter)
-    console.log("pres next")
-    if (b_counter === b_slides.length - 1) {
-        b_counter = 0;
-    } else {
-        b_counter++;
-    }
-    b_slideImage();
-    b_updateActiveClass();
+
+// for hero-b 
+
+let b_adIndex = 1;
+let b_firstLoad = true;
+let b_adInterval = setInterval(() => b_changeAdSlide(1), 3000);
+function b_changeAdSlide(n) {
+    b_showAdSlides(b_adIndex += n, n);
+    b_resetAdTimer();
+}
+function b_goToAdSlide(n) {
+    b_showAdSlides(b_adIndex = n, 1);
+    b_resetAdTimer();
 }
 
-const b_updateActiveClass= () => {
-    if (b_counter === 0) {
-        b_first.classList.add("active");
-        b_second.classList.remove("active");
-    } else if (b_counter === 1) {
-        b_second.classList.add("active");
-        b_first.classList.remove("active");
-    }
-};
+function b_resetAdTimer() {
+    clearInterval(b_adInterval);
+    b_adInterval = setInterval(() => b_changeAdSlide(1), 3000);
+}
+document.addEventListener("DOMContentLoaded", () => {
+    b_showAdSlides(1, 0);
+    b_firstLoad = false;
+});
 
-const b_slideImage = () => {
-    b_slides.forEach((slide) => {
-        slide.style.transform = `translateX(-${b_counter * 100}%)`
-    })
+document.querySelector("#hero-b .prev").addEventListener("click", () => b_changeAdSlide(-1));
+document.querySelector("#hero-b .next").addEventListener("click", () => b_changeAdSlide(1));
+
+function b_showAdSlides(n, indicator = 0) {
+    let ads = document.getElementsByClassName("hero-b-container");
+    let pages = document.querySelectorAll("#hero-b .b-page div");
+
+    if (n > ads.length) b_adIndex = 1;
+    if (n < 1) b_adIndex = ads.length;
+
+    for (let i = 0; i < ads.length; i++) {
+        ads[i].style.display = "none";
+        ads[i].classList.remove("slide-left", "slide-right");
+    }
+
+    for (let i = 0; i < pages.length; i++) {
+        pages[i].classList.remove("active");
+    }
+    if (!b_firstLoad) {
+        if (indicator === -1) {
+            ads[b_adIndex - 1].classList.add("slide-left");
+        } else if (indicator === 1) {
+            ads[b_adIndex - 1].classList.add("slide-right");
+        }
+    }
+
+    ads[b_adIndex - 1].style.display = "flex";
+    pages[b_adIndex - 1].classList.add("active");
 }

@@ -13,16 +13,18 @@
 
     #hero .next {
         right: 30px;
+        font-size: 13px;
     }
 
     #hero .prev {
         left: 30px;
+        font-size: 13px;
     }
+
 
     /* editors */
 
     #editors-pick .top-content {
-        /* padding-bottom: 48px; */
         padding: 0px 68.5px 48px 68.5px;
     }
 
@@ -37,18 +39,6 @@
     .editors-grid img {
         height: 500px;
     }
-
-    /* .editors-grid div:nth-child(1),
-    .editors-grid div:nth-child(2) {
-        grid-row: span 1;
-    }
-
-    .editors-grid div:nth-child(3) {
-        grid-row: 0;
-        display: flex;
-        flex-direction: column;
-    } */
-
 
     /* featured */
     #featured .top-content {
@@ -128,6 +118,24 @@
         row-gap: 30px;
     }
 
+    #featured-post .featured-post-container {
+        /* padding: 112px 0; */
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    #featured-post .top-content {
+        text-align: center;
+        padding: 0px 77px;
+    }
+
+    #featured-post .top-content p{
+        text-align: center;
+        /* padding: 0px 77px; */
+        margin: 0 auto;
+        width: 100%;
+    }
+
     /* footer-top */
     #footer-top .top-content {
         display: flex;
@@ -167,19 +175,28 @@
         padding: 9px 10px;
     }
 
-    #hero-b .next {
-        right: 30px;
-    }
-
     #hero-b .prev {
-        left: 30px;
+        top: 43.5%;
+        z-index: 1;
     }
-
+    
+    #hero-b .next {
+        top: 43.5%  ;
+        z-index: 1;
+    }
 
     #hero-b {
-        height: 1230px;
-        width: 100%;
-        position: relative;
+        height: 1300px;
+    }
+
+    #hero-b .next {
+        right: 20px;
+        font-size: 13px;
+    }
+    
+    #hero-b .prev {
+        left: 20px;
+        font-size: 13px;
     }
 
     .hero-b-left h1 {
@@ -195,9 +212,8 @@
 
     .hero-b-left {
         margin-top: 160px;
-        padding: 0px 60px;
-        padding-top: 50px;
-        background-color: yellow;
+        padding: 0px 40px;
+        padding-top: 40px;
         text-align: center;
     }
 
@@ -205,7 +221,6 @@
         padding-top: 0px;
         height: 100%;
         width: 100%;
-        background-color: blue;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -218,7 +233,6 @@
         object-fit: cover;
         background-position: 0% 0%;
         display: block;
-        margin-top: 0px;
     }
 
     .hero-b-left p {
