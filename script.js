@@ -48,7 +48,7 @@ function showAdSlides(n, indicator = 0) {
     if (n > ads.length) adIndex = 1;
     if (n < 1) adIndex = ads.length;
 
-    for (let i = 0; i < ads.length; i++) {
+    for (let i = 0; i < ads.length; i++) {d
         ads[i].style.display = "none";
         ads[i].classList.remove("slide-left", "slide-right");
     }
